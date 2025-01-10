@@ -98,7 +98,7 @@ import AboutGallery from "sub-components/about/AboutGallery";
 import CTAButton from "sub-components/about/CTAButton";
 import FeaturesList from "sub-components/about/FeaturesList";
 import HeroContent from "sub-components/about/HeroContent";
-import Stat from "sub-components/about/Stat";
+import AboutMeSecondSection from "sub-components/about/Stat";
 import TeamGridRoundImages from "sub-components/about/TeamGridRoundImages";
 
 // sub components for contact.js page
@@ -419,7 +419,7 @@ export {
   SimilarMentors,
   SimplePricingPlans,
   SocialMediaTraffic,
-  Stat,
+  AboutMeSecondSection,
   StudentsGridCard,
   StudentsListItems,
   SupportForm,

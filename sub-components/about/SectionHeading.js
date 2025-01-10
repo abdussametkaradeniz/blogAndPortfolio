@@ -1,18 +1,30 @@
-// Section : Header
-// Style : H2 title with description
+import { Col, Row } from "react-bootstrap";
+import Image from "next/image";
 
-// import node module libraries
-import { Col, Row } from 'react-bootstrap';
-
-const SectionHeading = ({ title, description }) => {
-	return (
-		<Row>
-			<Col md={6} sm={12} className="offset-right-md-6 mb-6">
-				<h2 className="display-4 mb-3 fw-bold">{title}</h2>
-				<p className="lead">{description}</p>
-			</Col>
-		</Row>
-	);
+const SectionHeading = ({ title, description, image, imagePosition }) => {
+  return (
+    <div className="mt-20">
+      <Row className="align-items-center">
+        <Col lg={6} md={12} sm={12}>
+          <div>
+            <h2 className="display-4 mb-3 fw-bold">{title}</h2>
+            <p className="lead">{description}</p>
+          </div>
+        </Col>
+        <Col lg={{ offset: 1, span: 5 }} md={12} sm={12} className="image-col">
+          <div className="mt-6 mt-lg-0">
+            <Image
+              src={image}
+              alt={""}
+              className="img-fluid w-80 rounded-5"
+              width={250}
+              height={250}
+            />
+          </div>
+        </Col>
+      </Row>
+    </div>
+  );
 };
 
 export default SectionHeading;

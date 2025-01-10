@@ -1,54 +1,16 @@
 // import node module libraries
-import { Fragment } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Fragment } from "react";
+import SectionHeading from "./SectionHeading";
 
-// import sub components
-import SectionHeading from './SectionHeading';
+const AboutMeSecondSection = () => {
+  const title = "Something New";
+  const description = `In the software development process, I possess in-depth knowledge in database design and system integrations. I specialize in developing efficient and scalable APIs using technologies like MongoDB and Node.js. Furthermore, I conduct detailed testing processes using NUnit to enhance software quality, always adhering to best practice standards.`;
 
-const Stat = () => {
-	const title = 'Our core values';
-	const description = `Geeks is the leading global marketplace for teaching and learning, connecting millions of students to the skills they need to succeed.`;
-
-	const counters = [
-		{
-			id: 1,
-			title: 'Learners',
-			value: '20M'
-		},
-		{
-			id: 2,
-			title: 'Instructors',
-			value: '57K'
-		},
-		{
-			id: 3,
-			title: 'Courses',
-			value: '21K'
-		},
-		{
-			id: 4,
-			title: 'Course enrollments',
-			value: '380M'
-		}
-	];
-	return (
-		<Fragment>
-			<SectionHeading title={title} description={description} />
-			<Row>
-				{counters.map((item, index) => {
-					return (
-						<Col lg={3} md={6} sm={6} xs={6} key={index}>
-							{/* Counter */}
-							<div className="border-top pt-4 mt-6 mb-5">
-								<h1 className="display-3 fw-bold mb-0">{item.value}</h1>
-								<p className="text-uppercase text-muted">{item.title}</p>
-							</div>
-						</Col>
-					);
-				})}
-			</Row>
-		</Fragment>
-	);
+  return (
+    <Fragment>
+      <SectionHeading title={title} description={description} />
+    </Fragment>
+  );
 };
 
-export default Stat;
+export default AboutMeSecondSection;
