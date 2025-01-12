@@ -1,12 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
-import { Col, Row, Container, Form, Button, Nav } from "react-bootstrap";
+import { Col, Row, Container, Nav } from "react-bootstrap";
 import Link from "next/link";
 import { BlogCard, BlogCardFullWidth, GeeksSEO } from "widgets";
 import BlogArticlesList from "data/blog/blogArticlesData";
 import BlankLayout from "layouts/marketing/BlankLayout";
-import FooterWithLinks from "layouts/marketing/footers/FooterWithLinks";
 import NavbarDefault from "layouts/marketing/navbars/NavbarDefault";
-import GoToTop from "layouts/GoToTop";
 import Footer from "layouts/marketing/footers/Footer";
 
 const BlogListing = () => {

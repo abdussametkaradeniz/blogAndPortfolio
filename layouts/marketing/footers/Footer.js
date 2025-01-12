@@ -7,7 +7,7 @@ import { Github, Instagram, Linkedin } from "react-bootstrap-icons";
 const Footer = ({ bgColor = "bg-light", goToTop = false }) => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className={`footer ${bgColor}`}>
+    <footer className={`footer ${bgColor} fixed-bottom`}>
       <Container>
         <Row className="align-items-center g-0 border-top py-2">
           <Col md={6} sm={12} className="text-center text-md-start">

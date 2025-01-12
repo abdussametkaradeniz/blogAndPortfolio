@@ -7,11 +7,33 @@ const ContactForm = () => {
     { value: "Other", label: "Other" },
   ];
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = {
+      firstName: event.target.formFirstName.value,
+      lastName: event.target.formLastName.value,
+      email: event.target.formEmail.value,
+      message: event.target.formMessages.value,
+    };
+
+    // Next.js API route'a POST isteği gönder
+    fetch("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("Success:", data))
+      .catch((error) => console.error("Error:", error));
+  };
+
   return (
     <div className="px-4 px-xl-20 py-8 py-lg-0">
       {/* form section */}
       <div id="form">
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Row>
             {/* First Name */}
             <Col md={6} sm={12}>

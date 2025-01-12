@@ -9,7 +9,7 @@ const NavbarDefault = [
   {
     id: uuid(),
     menuitem: "Blog",
-    link: "/blog",
+    link: "/blog/blog-posts",
   },
   {
     id: uuid(),

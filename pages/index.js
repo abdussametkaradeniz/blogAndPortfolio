@@ -1,15 +1,22 @@
 // import node module libraries
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { AboutMe } from "sub-components";
 import Contact from "./contact";
-// import widget/custom components
 import { CourseSlider, HeroHeaderDefault } from "widgets";
-
+import ContactWithText from "sub-components/contact/ContactWithText";
 const Home = () => {
+  const [popularPosts, setPopularPosts] = useState([]);
+
   useEffect(() => {
     document.body.className = "bg-light";
-  });
+    // API'den veri çekme işlemi
+    fetch("/api/posts/get-popular-posts")
+      .then((response) => response.json())
+      .then((data) => setPopularPosts(data))
+      .catch((error) => console.error("Error fetching popular posts:", error));
+  }, []);
+
   return (
     <Fragment>
       {/*  Page Content  */}
@@ -29,12 +36,12 @@ const Home = () => {
             </Col>
           </Row>
           <div className="position-relative">
-            <CourseSlider popular={true} />
+            <CourseSlider popular={true} items={popularPosts} />
           </div>
         </Container>
       </section>
 
-      <Contact />
+      <ContactWithText />
     </Fragment>
   );
 };
